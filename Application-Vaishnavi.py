@@ -1,14 +1,20 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[ ]:
+
+
 from flask import Flask,request
 from sklearn.linear_model import LogisticRegression
 import pandas as pd
-import numpy as np
 import joblib
+import numpy as np
 
 app = Flask(__name__)
 
 @app.route("/train")
 def train():
-    df = pd.read_excel("D:\Training\Python-DS\False Alarm\False Alarm\False Alarm Cases.xlsx")
+    df = pd.read_excel("False Alarm Cases.xlsx")
     df.drop(["Case No.", "Unnamed: 8", "Unnamed: 9", "Unnamed: 10"], axis=1, inplace=True)
     logr = LogisticRegression()
     logr.fit(df.drop('Spuriosity Index(0/1)',axis=1),
@@ -31,5 +37,12 @@ def predict():
     else:
         return "True Alarm, Danger "
 
-print('Hi')
-app.run(port=5000)
+
+app.run(port=5001)
+
+
+# In[ ]:
+
+
+
+
