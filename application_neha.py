@@ -31,5 +31,5 @@ def predict():
     else:
         return "True Alarm, Danger "
 
-
+print("Hello World")
 app.run(port=5000)
