@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/train")
 def train():
-    df = pd.read_excel("path\False Alarm Cases.xlsx")
+    df = pd.read_excel("G:\insta\False Alarm Cases.xlsx")
     df.drop(["Case No.", "Unnamed: 8", "Unnamed: 9", "Unnamed: 10"], axis=1, inplace=True)
     logr = LogisticRegression()
     logr.fit(df.drop('Spuriosity Index(0/1)',axis=1),
