@@ -30,5 +30,5 @@ def predict():
         return "False Alarm, No Danger"
     else:
         return "True Alarm, Danger "
-
+print('Hi')
 app.run(port=5003)
